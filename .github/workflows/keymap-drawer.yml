@@ -1,0 +1,38 @@
+name: Generate keymap diagram
+
+on:
+  push:
+    paths:
+      - "config/**/*.keymap"
+      - "config/**/*.json"
+      - ".github/workflows/keymap-drawer.yml"
+  workflow_dispatch:
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install keymap-drawer (pinned)
+        run: |
+          python -m pip install --upgrade pip
+          pip install "keymap-drawer==0.22.1"
+
+      - name: Generate SVG
+        run: |
+          mkdir -p keymap_draw
+          keymap parse -z config/keymap.keymap -o keymap_draw/keymap.yaml
+          keymap draw keymap_draw/keymap.yaml -o keymap_draw/keymap.svg
+
+      - name: Upload diagram
+        uses: actions/upload-artifact@v4
+        with:
+          name: keymap-diagram
+          path: keymap_draw
