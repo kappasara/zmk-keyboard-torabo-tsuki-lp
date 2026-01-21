@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "config/keymap.keymap"
+      - "config/**/*.keymap"
+      - "config/**/*.dtsi"
       - "config/info.json"
       - ".github/workflows/keymap-drawer.yml"
 
@@ -12,13 +13,13 @@ jobs:
   draw:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: "pip"
 
       - name: Install keymap-drawer
         run: |
@@ -28,11 +29,7 @@ jobs:
       - name: Generate SVG
         run: |
           mkdir -p keymap_draw
-
-          # 1) ZMK .keymap → keymap-drawer用 YAML を生成
           keymap parse -z config/keymap.keymap -o keymap_draw/keymap.yaml
-
-          # 2) 物理レイアウトを QMK形式 info.json から指定してSVG生成
           keymap draw -j config/info.json keymap_draw/keymap.yaml -o keymap_draw/keymap.svg
 
       - name: Upload diagram
