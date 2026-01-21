@@ -17,7 +17,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          cache: "pip"
 
       - name: Install keymap-drawer
         run: |
@@ -27,8 +28,12 @@ jobs:
       - name: Generate SVG
         run: |
           mkdir -p keymap_draw
-          keymap parse -z config/keymap.keymap -l config/info.json -o keymap_draw/keymap.yaml
-          keymap draw keymap_draw/keymap.yaml -o keymap_draw/keymap.svg
+
+          # 1) ZMK .keymap → keymap-drawer用 YAML を生成
+          keymap parse -z config/keymap.keymap -o keymap_draw/keymap.yaml
+
+          # 2) 物理レイアウトを QMK形式 info.json から指定してSVG生成
+          keymap draw -j config/info.json keymap_draw/keymap.yaml -o keymap_draw/keymap.svg
 
       - name: Upload diagram
         uses: actions/upload-artifact@v4
