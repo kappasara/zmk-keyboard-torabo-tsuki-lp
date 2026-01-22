@@ -1,3 +1,5 @@
+#include <input/processors.dtsi>
+
 /{
     split_inputs {
         #address-cells = <1>;
@@ -13,6 +15,15 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         status = "okay";
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-     };
+
+        /* 通常時：カーソル移動 */
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+
+        /* レイヤー2が有効な間だけ：XY移動→スクロール変換 */
+        scroller {
+            layers = <2>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+    };
 };
