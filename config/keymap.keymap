@@ -82,11 +82,11 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        /* - -> _ */
+        /* - -> = */
         jis_minus: jis_minus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp JP_UNDERSCORE>;
+            bindings = <&kp MINUS>, <&kp JP_EQUAL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -103,6 +103,14 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_YEN>, <&kp JP_PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        /* ¥ -> _ */
+        jis_ye_un: jis_ye_un {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_YEN>, <&kp JP_UNDERSCORE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -155,7 +163,7 @@
 &kp JP_HANZEN   &kp N1  &jis_2    &kp N3    &kp N4    &kp N5                                         &jis_6       &jis_7    &jis_8     &jis_9          &kp N0                &jis_minus
 &kp TAB         &kp Q   &kp W     &kp E     &kp R     &kp T                                          &kp Y        &kp U     &kp I      &kp O           &kp P                 &jis_at
 &kp CAPS        &kp A   &lt 1 S   &kp D     &kp F     &kp G        &jis_caret     &jis_lbracket      &kp H        &kp J     &kp K      &lt 1 L         &jis_semi             &jis_colon
-&kp LSHFT       &kp Z   &kp X     &kp C     &kp V     &lt 3 B      &jis_yen       &jis_rbracket      &kp N        &kp M     &kp COMMA  &kp DOT         &mt RIGHT_SHIFT FSLH  &kp UP_ARROW
+&kp LSHFT       &kp Z   &kp X     &kp C     &kp V     &lt 3 B      &jis_ye_un     &jis_rbracket      &kp N        &kp M     &kp COMMA  &kp DOT         &mt RIGHT_SHIFT FSLH  &kp UP_ARROW
 &kp LCTRL       &tog 2  &kp LGUI  &kp LALT  &kp BSPC  &lt 2 SPACE  &kp DEL        &kp BACKSPACE      &lt 2 ENTER  &kp BSPC  &kp RALT   &kp LEFT_ARROW  &kp DOWN_ARROW        &kp RIGHT_ARROW
             >;
         };
@@ -174,7 +182,7 @@
             bindings = <
 &kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6           &kp F7           &kp F8           &kp F9           &kp F10       &kp F11
 &trans   &trans  &trans  &trans  &trans  &trans                  &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &kp F12
-&trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &trans
+&trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &jis_yen
 &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL     &trans
 &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp ENTER        &trans           &trans           &trans           &trans        &trans
             >;
