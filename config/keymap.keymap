@@ -199,7 +199,7 @@
         layer_Fn+Num {
             bindings = <
 &kp ESC  &kp F1    &kp F2     &kp F3     &kp F4   &kp F5                           &kp F6           &kp F7           &kp F8           &kp F9           &kp F10       &kp F11
-&trans   &trans    &trans     &trans     &trans   &trans                           &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &kp F12
+&trans   &trans    &trans     &trans     &trans   &trans                           &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &lt 4 PLUS    &kp F12
 &trans   &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp PRINTSCREEN  &trans  &trans  &kp SLASH        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &jis_yen
 &trans   &trans    &trans     &trans     &trans   &trans           &trans  &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL     &trans
 &trans   &trans    &trans     &trans     &trans   &trans           &trans  &trans  &kp ENTER        &trans           &trans           &trans           &trans        &trans
@@ -228,11 +228,11 @@
 
         layer_Mouse {
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &mkp MB3   &trans                  &trans  &trans     &mkp MB3   &trans  &trans  &trans
-&trans  &mo 5   &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &mo 5   &trans
-&trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans  &trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans    &trans                  &trans  &trans    &trans     &trans     &trans  &trans
+&trans  &mo 4   &mkp LCLK  &mkp MB3   &mkp MB5  &trans                  &trans  &mkp MB5  &mkp MB3   &mkp RCLK  &mo 4   &trans
+&mo 5   &trans  &mkp MB4   &mkp RCLK  &mkp MB4  &trans  &trans  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp MB4   &trans  &mo 5
+&trans  &trans  &trans     &mkp MB5   &trans    &trans  &trans  &trans  &trans  &trans    &mkp MB5   &trans     &trans  &trans
+&trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans
             >;
         };
 
