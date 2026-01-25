@@ -17,20 +17,20 @@
         device = <&trackball_split>;
         status = "okay";
 
-        /* 通常時：カーソル移動 */
-        input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-
-        /* レイヤー5の間だけ：スクロールに変換＋量を増やす */
+        /* ★テスト：レイヤー4 or 5 の間はスクロールに変換 */
         scroller {
-            layers = <5>;
+            layers = <4 5>;
             input-processors = <
                 &zip_xy_to_scroll_mapper
-                /* スクロール量を増やす（まずは 6倍で体感確認。強ければ 3 1 や 3 2 へ） */
+                /* 体感が弱いことが多いので増幅（強すぎたら 3 1 / 3 2 に） */
                 &zip_scroll_scaler 6 1
-                /* 方向が直感と逆なら反転（不要ならこの行を消してOK） */
+                /* 方向が逆ならここを調整（不要なら消してOK） */
                 &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             >;
         };
+
+        /* 通常時：カーソル移動 */
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
 };
