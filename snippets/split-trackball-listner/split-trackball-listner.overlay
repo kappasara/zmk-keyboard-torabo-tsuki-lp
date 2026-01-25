@@ -1,4 +1,5 @@
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 /{
     split_inputs {
@@ -16,16 +17,20 @@
         device = <&trackball_split>;
         status = "okay";
 
-        /* レイヤー5の間だけスクロール化（方向も通常と揃える） */
-        scroller {
-            layers = <5>;
-            input-processors =
-                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-                 &zip_xy_to_scroll_mapper>;
-        };
-
         /* 通常時：カーソル移動 */
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+
+        /* レイヤー5の間だけ：スクロールに変換＋量を増やす */
+        scroller {
+            layers = <5>;
+            input-processors = <
+                &zip_xy_to_scroll_mapper
+                /* スクロール量を増やす（まずは 6倍で体感確認。強ければ 3 1 や 3 2 へ） */
+                &zip_scroll_scaler 6 1
+                /* 方向が直感と逆なら反転（不要ならこの行を消してOK） */
+                &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            >;
+        };
     };
 };
