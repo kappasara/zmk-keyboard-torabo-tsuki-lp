@@ -36,9 +36,9 @@
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 
-        /* ★おすすめ：2/7 ≒ 0.286倍 */
-        &tb_cursor_x_scaler 2 7
-        &tb_cursor_y_scaler 2 7
+        /* ★おすすめ：2/5 */
+        &tb_cursor_x_scaler 2 5
+        &tb_cursor_y_scaler 2 5
     >;
 
     /* レイヤー5：スクロール（縦逆対策 + 速度減速） */
@@ -50,8 +50,8 @@
 
             &zip_xy_to_scroll_mapper
 
-            /* ★おすすめ：1/4 = 0.25倍 */
-            &tb_scroll_scaler 1 4
+            /* ★おすすめ：1/6 */
+            &tb_scroll_scaler 1 6
         >;
     };
 };
