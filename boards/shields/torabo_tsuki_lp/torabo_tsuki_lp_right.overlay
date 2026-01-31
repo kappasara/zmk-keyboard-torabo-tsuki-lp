@@ -1,21 +1,62 @@
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    input_processors {
+        tb_cursor_x_scaler: tb_cursor_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X>;
+            track-remainders;
+        };
+
+        tb_cursor_y_scaler: tb_cursor_y_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_Y>;
+            track-remainders;
+        };
+
+        tb_scroll_scaler: tb_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+};
 
 &trackball_listener {
-    /* 通常：カーソル用（あなたの今の設定） */
-    input-processors =
-        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    /* 通常：カーソル（25mm向け：まずは大きめに減速） */
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 
-    /* layer_Scroll が 5番目なら <5> */
+        /* ★おすすめ：2/7 ≒ 0.286倍 */
+        &tb_cursor_x_scaler 2 7
+        &tb_cursor_y_scaler 2 7
+    >;
+
+    /* レイヤー5：スクロール（縦逆対策 + 速度減速） */
     scroller {
         layers = <5>;
         input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            /* 縦スクロールだけ逆だった対策：Y反転を外す */
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT)
+
             &zip_xy_to_scroll_mapper
+
+            /* ★おすすめ：1/4 = 0.25倍 */
+            &tb_scroll_scaler 1 4
         >;
     };
 };
+
+
 
 &size_s_transform {
     col-offset = <7>;
