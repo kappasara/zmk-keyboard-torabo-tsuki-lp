@@ -1,6 +1,3 @@
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-
 /{
     split_inputs {
         #address-cells = <1>;
@@ -16,21 +13,6 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         status = "okay";
-
-        /* ★テスト：レイヤー4 or 5 の間はスクロールに変換 */
-        scroller {
-            layers = <4 5>;
-            input-processors = <
-                &zip_xy_to_scroll_mapper
-                /* 体感が弱いことが多いので増幅（強すぎたら 3 1 / 3 2 に） */
-                &zip_scroll_scaler 6 1
-                /* 方向が逆ならここを調整（不要なら消してOK） */
-                &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            >;
-        };
-
-        /* 通常時：カーソル移動 */
-        input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-    };
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+     };
 };
