@@ -31,41 +31,36 @@
     };
 };
 
+/* ★滑らかさ改善の本丸：センサー解像度を上げる（まずは 1600 くらいから） */
+&trackball {
+    cpi = <1600>;
+};
+
 &trackball_listener {
-    /* 通常：カーソル（25mm向け：まずは大きめに減速） */
+    /* 通常：カーソル */
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
 
-        /* ★おすすめ：2/5 */
-        &tb_cursor_x_scaler 2 5
-        &tb_cursor_y_scaler 2 5
+        /* 2/5=0.4 は少し遅いとのことなので、3/7≈0.429 に微増 */
+        &tb_cursor_x_scaler 3 7
+        &tb_cursor_y_scaler 3 7
     >;
 
-    /* レイヤー5：スクロール（縦逆対策 + 速度減速） */
+    /* レイヤー5：スクロール（縦だけ逆だった対策は維持） */
     scroller {
         layers = <5>;
         input-processors = <
-            /* 縦スクロールだけ逆だった対策：Y反転を外す */
+            /* 縦スクロールだけ逆：Y反転を付けない */
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT)
 
             &zip_xy_to_scroll_mapper
 
-            /* ★おすすめ：1/6 */
-            &tb_scroll_scaler 1 6
+            /* スクロール遅く：まず 1/10 (=0.1) くらいまで落としてみる */
+            &tb_scroll_scaler 1 10
         >;
     };
 };
 
-
-
-&size_s_transform {
-    col-offset = <7>;
-};
-
-&size_m_transform {
-    col-offset = <7>;
-};
-
-&size_l_transform {
-    col-offset = <7>;
-};
+&size_s_transform { col-offset = <7>; };
+&size_m_transform { col-offset = <7>; };
+&size_l_transform { col-offset = <7>; };
