@@ -228,21 +228,21 @@
 
         layer_Mouse {
             bindings = <
-&trans  &trans  &trans     &trans     &trans    &trans                  &trans  &trans    &trans     &trans     &trans  &trans
-&trans  &mo 4   &mkp LCLK  &mkp MB3   &mkp MB5  &trans                  &trans  &mkp MB5  &mkp MB3   &mkp RCLK  &mo 4   &trans
-&mo 5   &trans  &mkp MB4   &mkp RCLK  &mkp MB4  &trans  &trans  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp MB4   &trans  &mo 5
-&trans  &trans  &trans     &mkp MB5   &trans    &trans  &trans  &trans  &trans  &trans    &mkp MB5   &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB5                  &mkp MB5  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &mo 5   &mo 4   &mkp LCLK  &mkp RCLK  &mkp MB4  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &mo 4   &mo 5   &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB3  &trans  &trans  &mkp MB3  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans
             >;
         };
 
         layer_Scroll {
             bindings = <
-&trans  &trans  &trans     &trans     &trans    &trans                  &trans  &trans    &trans     &trans     &trans  &trans
-&trans  &trans  &mkp LCLK  &mkp MB3   &mkp MB5  &trans                  &trans  &mkp MB5  &mkp MB3   &mkp RCLK  &trans  &trans
-&trans  &trans  &mkp MB4   &mkp RCLK  &mkp MB4  &trans  &trans  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp MB4   &trans  &trans
-&trans  &trans  &trans     &mkp MB5   &trans    &trans  &trans  &trans  &trans  &trans    &mkp MB5   &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB5                  &mkp MB5  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mkp MB4  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB3  &trans  &trans  &mkp MB3  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans
             >;
         };
 
