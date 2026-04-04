@@ -196,6 +196,26 @@
             >;
         };
 
+        layer_Mouse {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB5                  &mkp MB5  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &mo 5   &mo 4   &mkp LCLK  &mkp RCLK  &mkp MB4  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &mo 4   &mo 5   &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB3  &trans  &trans  &mkp MB3  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans
+            >;
+        };
+
+        layer_Scroll {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB5                  &mkp MB5  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mkp MB4  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB3  &trans  &trans  &mkp MB3  &mkp MB4   &mkp MB5   &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans
+            >;
+        };
+
         layer_Fn+Num {
             bindings = <
 &kp ESC  &kp F1    &kp F2     &kp F3     &kp F4   &kp F5                           &kp F6           &kp F7           &kp F8           &kp F9           &kp F10       &kp F11
@@ -223,26 +243,6 @@
 &trans   &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans  &kp LEFT_BRACE  &kp MINUS      &kp EQUAL         &kp RIGHT_BRACE    &kp COLON      &trans
 &trans   &kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans  &kp LS(MINUS)   &kp LS(EQUAL)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
 &trans   &trans            &trans            &trans      &trans      &trans      &trans  &trans  &kp TAB         &kp DEL        &trans            &trans             &trans         &trans
-            >;
-        };
-
-        layer_Mouse {
-            bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB5                  &mkp MB5  &mkp MB4   &mkp MB5   &trans  &trans  &trans
-&trans  &mo 5   &mo 4   &mkp LCLK  &mkp RCLK  &mkp MB4  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &mo 4   &mo 5   &trans
-&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB3  &trans  &trans  &mkp MB3  &mkp MB4   &mkp MB5   &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans
-            >;
-        };
-
-        layer_Scroll {
-            bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB5                  &mkp MB5  &mkp MB4   &mkp MB5   &trans  &trans  &trans
-&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mkp MB4  &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &mkp MB4   &mkp MB5   &mkp MB3  &trans  &trans  &mkp MB3  &mkp MB4   &mkp MB5   &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans
             >;
         };
 

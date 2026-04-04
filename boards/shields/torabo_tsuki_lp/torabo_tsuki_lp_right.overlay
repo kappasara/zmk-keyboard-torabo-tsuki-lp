@@ -1,19 +1,56 @@
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    input_processors {
+        tb_cursor_x_scaler: tb_cursor_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X>;
+            track-remainders;
+        };
+
+        tb_cursor_y_scaler: tb_cursor_y_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_Y>;
+            track-remainders;
+        };
+
+        tb_scroll_scaler: tb_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+};
 
 &pointing_listener {
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    /* 通常：カーソル */
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+        &tb_cursor_x_scaler 3 7
+        &tb_cursor_y_scaler 3 7
+    >;
+
+    /* レイヤー2：スクロール */
+    scroller {
+        layers = <2>;
+        input-processors = <
+            /* 縦だけ逆だった対策：Y反転を付けない */
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT)
+            &zip_xy_to_scroll_mapper
+            &tb_scroll_scaler 1 20
+        >;
+    };
 };
 
-&size_s_transform {
-    col-offset = <7>;
-};
-
-&size_m_transform {
-    col-offset = <7>;
-};
-
-&size_l_transform {
-    col-offset = <7>;
-};
+&size_s_transform { col-offset = <7>; };
+&size_m_transform { col-offset = <7>; };
+&size_l_transform { col-offset = <7>; };
