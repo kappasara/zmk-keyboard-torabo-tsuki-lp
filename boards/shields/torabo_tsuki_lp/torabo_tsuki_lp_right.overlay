@@ -48,37 +48,18 @@
      * ※ 数字は RC(...) ではなく keymap の key position
      */
     excluded-positions = <
-        /* row 2 */
-        15 /* E */
-        16 /* R */
-        17 /* T */
-        18 /* Y */
-        19 /* U */
-        20 /* I */
+        /* Mouse layer で実際に使う位置 */
+        32 /* H : MB4 */
+        33 /* J : LCLK */
+        34 /* K : RCLK */
+        35 /* L : mo 2 */
+        36 /* ; : MB5 */
+        46 /* N : MB3 */
+        47 /* M : mo 2 */
+        48 /* , : mo 2 */
 
-        /* row 3 */
-        25 /* A */
-        26 /* S */
-        27 /* D */
-        28 /* F */
-        29 /* G */
-        32 /* H */
-        33 /* J */
-        34 /* K */
-        35 /* L */
-        36 /* ; */
-
-        /* row 4 */
-        41 /* C */
-        42 /* V */
-        43 /* B (LT 6 B) */
-        46 /* N */
-        47 /* M */
-        48 /* , */
-
-        /* modifiers */
+        /* modifiers: 必要なら残す */
         38 /* Left Shift */
-        50 /* Right Shift / / */
         52 /* Left Ctrl */
         55 /* Left Alt */
     >;
