@@ -43,12 +43,12 @@
      * 方針:
      * - layer_Mouse 上のマウス系キー
      * - 専用の Shift / Ctrl / Alt
-     * - 矢印キー
      *
      * ※ 数字は RC(...) ではなく keymap の key position
      */
     excluded-positions = <
         /* Mouse layer で実際に使う位置 */
+        13 /* Q : mo 2 */
         32 /* H : MB4 */
         33 /* J : LCLK */
         34 /* K : RCLK */
