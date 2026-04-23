@@ -88,7 +88,7 @@
             /* 縦だけ逆だった対策：Y反転を付けない */
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT)
             &zip_xy_to_scroll_mapper
-            &tb_scroll_scaler 1 8
+            &tb_scroll_scaler 1 4
         >;
     };
 };
