@@ -191,7 +191,7 @@
             bindings = <
 &kp JP_HANZEN  &kp N1   &jis_2    &kp N3    &kp N4    &kp N5                                  &jis_6       &jis_7    &jis_8     &jis_9          &kp N0                &jis_minus
 &kp TAB        &lt 2 Q  &kp W     &kp E     &kp R     &kp T                                   &kp Y        &kp U     &kp I      &kp O           &lt 2 P               &jis_at
-&kp CAPS       &kp A    &kp S     &kp D     &kp F     &kp G        &jis_caret  &jis_lbracket  &kp H        &kp J     &kp K      &kp L           &jis_semi             &jis_colon
+&kp CAPS       &kp A    &kp S     &kp D     &kp F     &kp G        &jis_caret  &jis_lbracket  &kp H        &kp J     &kp K      &lt 1 L         &jis_semi             &jis_colon
 &kp LSHFT      &kp Z    &kp X     &kp C     &kp V     &lt 6 B      &jis_ye_un  &jis_rbracket  &kp N        &kp M     &kp COMMA  &kp DOT         &mt RIGHT_SHIFT FSLH  &kp UP_ARROW
 &kp LCTRL      &tog 3   &kp LGUI  &kp LALT  &kp BSPC  &lt 3 SPACE  &kp DEL     &kp BACKSPACE  &lt 3 ENTER  &kp BSPC  &kp RALT   &kp LEFT_ARROW  &kp DOWN_ARROW        &kp RIGHT_ARROW
             >;
@@ -201,7 +201,7 @@
             bindings = <
 &trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans   &trans
 &trans  &mo 2   &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans   &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &mo 2   &mkp MB5 &trans
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &trans  &mkp MB5 &trans
 &trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &mkp MB3  &mo 2      &mo 2      &trans  &trans   &trans
 &trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans   &trans
             >;
