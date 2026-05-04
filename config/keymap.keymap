@@ -199,11 +199,11 @@
 
         layer_Mouse {
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans   &trans
-&trans  &mo 2   &trans  &trans     &trans     &trans                    &trans    &trans     &trans     &trans  &trans   &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &mkp MB4  &mkp LCLK  &mkp RCLK  &trans  &mkp MB5 &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &mkp MB3  &mo 2      &mo 2      &trans  &trans   &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans    &trans     &trans     &trans  &trans   &trans
+&trans  &trans  &trans  &trans     &trans     &trans                    &trans  &trans    &trans     &trans    &trans   &trans
+&trans  &mo 2   &trans  &trans     &trans     &trans                    &trans  &trans    &trans     &mkp RCLK &mo 2    &trans
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &mkp MB4  &mkp LCLK  &mo 2     &trans   &mkp MB5
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &mkp MB3  &mo 2      &trans    &trans   &trans
+&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &trans    &trans     &trans    &trans   &trans
             >;
         };
 
