@@ -1,0 +1,23 @@
+name: Generate keymap diagram
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "boards/shields/torabo_tsuki_lp/torabo_tsuki_lp.keymap"
+      - "boards/shields/torabo_tsuki_lp/**/*.dtsi"
+      - "boards/shields/torabo_tsuki_lp/**/*.overlay"
+      - "keymap_drawer.config.yaml"
+      - ".github/workflows/keymap-drawer.yml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      keymap_patterns: "boards/shields/torabo_tsuki_lp/torabo_tsuki_lp.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      west_config_path: "config"
+      output_folder: "keymap-drawer"
+      destination: "artifact"
+      artifact_name: "keymap-diagram"
+      fail_on_error: true
