@@ -39,37 +39,6 @@
     };
 };
 
-/* Auto Mouse Layer: click後の短時間維持用 */
-&zip_temp_layer {
-    /* キー入力直後の誤爆防止 */
-    require-prior-idle-ms = <250>;
-
-    /*
-     * 非マウスキーを押したら AML を抜ける。
-     * ここに入れた位置のキーだけは AML 維持。
-     *
-     * ※ 数字は RC(...) ではなく keymap の key position
-     * ※ コメントは layer_0 での物理位置
-     */
-    excluded-positions = <
-        /* Mouse layer で実際に使う位置 */
-        13 /* Q : mo 2 */
-        21 /* O : RCLK */
-        22 /* P : mo 2 */
-        33 /* J : MB4 */
-        34 /* K : LCLK */
-        35 /* L : mo 2 */
-        37 /* : : MB5 */
-        47 /* M : MB3 */
-        48 /* , : mo 2 */
-
-        /* modifiers */
-        38 /* Left Shift */
-        52 /* Left Ctrl */
-        55 /* Left Alt */
-    >;
-};
-
 &pointing_listener {
     /* 通常：カーソル */
     input-processors = <
