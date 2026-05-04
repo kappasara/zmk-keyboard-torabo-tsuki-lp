@@ -7,6 +7,7 @@ on:
       - "boards/shields/torabo_tsuki_lp/torabo_tsuki_lp.keymap"
       - "boards/shields/torabo_tsuki_lp/**/*.dtsi"
       - "boards/shields/torabo_tsuki_lp/**/*.overlay"
+      - "config/info.json"
       - "keymap_drawer.config.yaml"
       - ".github/workflows/keymap-drawer.yml"
 
@@ -21,4 +22,4 @@ jobs:
       destination: "artifact"
       artifact_name: "keymap-diagram"
       fail_on_error: true
-      draw_args: "torabo_tsuki_lp:'-d boards/shields/torabo_tsuki_lp/torabo_tsuki_lp_layouts.dtsi -l physical_layout_l'"
+      draw_args: "torabo_tsuki_lp:'-j config/info.json'"
