@@ -21,3 +21,4 @@ jobs:
       destination: "artifact"
       artifact_name: "keymap-diagram"
       fail_on_error: true
+      draw_args: "torabo_tsuki_lp:'-d boards/shields/torabo_tsuki_lp/torabo_tsuki_lp_layouts.dtsi -l physical_layout_l'"
