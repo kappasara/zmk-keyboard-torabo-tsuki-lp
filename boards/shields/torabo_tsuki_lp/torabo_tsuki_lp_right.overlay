@@ -70,44 +70,6 @@
     >;
 };
 
-/* Auto Mouse Layer: trackball移動による発火だけthreshold付きにする */
- / {
-    zip_temp_layer_threshold: zip_temp_layer_threshold {
-        compatible = "zmk,input-processor-temp-layer-threshold";
-        #input-processor-cells = <2>;
-
-        /*
-         * AML発動に必要な累積移動量。
-         * 大きくすると、軽く触れただけでは Mouse layer に入りにくくなる。
-         */
-        threshold = <15>;
-
-        /*
-         * 微小移動の累積をリセットするまでの時間。
-         */
-        reset-timeout-ms = <200>;
-
-        /* 既存の zip_temp_layer と同じ誤爆防止 */
-        require-prior-idle-ms = <250>;
-
-        excluded-positions = <
-            13 /* Q : mo 2 */
-            21 /* O : RCLK */
-            22 /* P : mo 2 */
-            33 /* J : MB4 */
-            34 /* K : LCLK */
-            35 /* L : mo 2 */
-            37 /* : : MB5 */
-            47 /* M : MB3 */
-            48 /* , : mo 2 */
-
-            38 /* Left Shift */
-            52 /* Left Ctrl */
-            55 /* Left Alt */
-        >;
-    };
-};
-
 &pointing_listener {
     /* 通常：カーソル */
     input-processors = <
