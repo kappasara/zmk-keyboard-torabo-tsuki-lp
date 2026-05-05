@@ -4,9 +4,10 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "boards/shields/torabo_tsuki_lp/torabo_tsuki_lp.keymap"
+      - "boards/shields/torabo_tsuki_lp/**/*.keymap"
       - "boards/shields/torabo_tsuki_lp/**/*.dtsi"
       - "boards/shields/torabo_tsuki_lp/**/*.overlay"
+      - "config/**/*.keymap"
       - "config/info.json"
       - "keymap_drawer.config.yaml"
       - ".github/workflows/keymap-drawer.yml"
