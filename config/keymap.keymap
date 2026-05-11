@@ -189,11 +189,11 @@
 
         layer_0 {
             bindings = <
-&kp JP_HANZEN  &kp N1   &jis_2    &kp N3    &kp N4     &kp N5                                  &jis_6       &jis_7    &jis_8       &jis_9          &kp N0                &jis_minus
-&kp TAB        &lt 2 Q  &kp W     &kp E     &kp R      &kp T                                   &kp Y        &kp U     &kp I        &kp O           &lt 1 P               &jis_at
-&kp CAPS       &kp A    &kp S     &kp D     &kp F      &kp G        &jis_caret  &jis_lbracket  &kp H        &kp J     &kp K        &lt 2 L         &jis_semi             &jis_colon
-&kp LSHFT      &kp Z    &kp X     &kp C     &kp V      &lt 6 B      &jis_ye_un  &jis_rbracket  &kp N        &kp M     &lt 2 COMMA  &kp DOT         &mt RIGHT_SHIFT FSLH  &kp UP_ARROW
-&kp LCTRL      &tog 3   &kp LGUI  &kp LALT  &kp ENTER  &lt 3 SPACE  &kp DEL     &kp BACKSPACE  &lt 3 ENTER  &kp BSPC  &kp RALT     &kp LEFT_ARROW  &kp DOWN_ARROW        &kp RIGHT_ARROW
+&kp JP_HANZEN  &kp N1   &jis_2    &kp N3    &kp N4  &kp N5                                  &jis_6       &jis_7    &jis_8       &jis_9          &kp N0                &jis_minus
+&kp TAB        &lt 2 Q  &kp W     &kp E     &kp R   &kp T                                   &kp Y        &kp U     &kp I        &kp O           &lt 1 P               &jis_at
+&kp CAPS       &kp A    &kp S     &kp D     &kp F   &kp G        &jis_caret  &jis_lbracket  &kp H        &kp J     &kp K        &lt 2 L         &jis_semi             &jis_colon
+&kp LSHFT      &kp Z    &kp X     &kp C     &kp V   &lt 6 B      &jis_ye_un  &jis_rbracket  &kp N        &kp M     &lt 2 COMMA  &kp DOT         &mt RIGHT_SHIFT FSLH  &kp UP_ARROW
+&kp LCTRL      &tog 3   &kp LGUI  &kp LALT  &kp F2  &lt 3 SPACE  &kp DEL     &kp BACKSPACE  &lt 3 ENTER  &kp BSPC  &kp RALT     &kp LEFT_ARROW  &kp DOWN_ARROW        &kp RIGHT_ARROW
             >;
         };
 
@@ -265,7 +265,7 @@
         compatible = "zmk,input-processor-temp-layer-threshold";
         #input-processor-cells = <2>;
 
-        threshold = <15>;
+        threshold = <10>;
         reset-timeout-ms = <200>;
         require-prior-idle-ms = <250>;
 
