@@ -43,8 +43,8 @@
     /* 通常：カーソル */
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-        &tb_cursor_x_scaler 1 2
-        &tb_cursor_y_scaler 1 2
+        &tb_cursor_x_scaler 4 7
+        &tb_cursor_y_scaler 4 7
     
         /*
          * 1) トラボを動かしたら Mouse layer を自動ON
